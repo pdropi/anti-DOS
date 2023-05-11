@@ -39,7 +39,7 @@ if (strpos($shm_data, $quebra_de_linha) !== false){
 //str_pad pra preencher com nulo o espaço restante, se a string nova for menor, pois, shmop não substitui dados antigos na escrita
 shmop_write($shm_id, str_pad($permanece.hrtime(true).$separacao_dos_dados.$dado_atual.$quebra_de_linha, $tamanho_max_acessos,"\0"), 0);
 
-//if($_SERVER['REMOTE_ADDR'] == '2804:214:8019:8215:79f5:2ad5:af38:1762') echo "acessos: $shm_data "; //exibir lista de acessos no intervalo
+//if($_SERVER['REMOTE_ADDR'] == '2804:214:8019:8215:79f5:2ad5:ae38:1662') echo "acessos: $shm_data "; //exibir lista de acessos no intervalo
 
 //--------verifica e refaz lista de bloqueios dentro do intervalo --------------
 
@@ -75,5 +75,5 @@ if ($count >= $qtd_max){
 shmop_write($shm_id, str_pad($permanece, $tamanho_max_blocks,"\0"), 0);
 
 if($log)file_put_contents($caminho_log, $log, FILE_APPEND); //escreve no log
-//if($_SERVER['REMOTE_ADDR'] == 'ip') echo "bloqueados: $shm_data "; //exibir bloqueados
+//if($_SERVER['REMOTE_ADDR'] == '2804:214:8019:8215:79f5:2ad5:ae38:1662') echo "bloqueados: $shm_data "; //exibir bloqueados
 if($ainda_bloqueado or $count >= $qtd_max) {header('HTTP/1.1 429'); die( "Too Many Requests\n");}
