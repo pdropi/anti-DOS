@@ -23,9 +23,9 @@ $permanece = ''; //dados que ainda estão dentro do intervalo e continuarão na 
 
 $shm_id = shmop_open($key_acessos, "c", 0600, $tamanho_max_acessos);
 $shm_data = shmop_read($shm_id, 0, $tamanho_max_acessos);
+$count =0;
 
 if (strpos($shm_data, $quebra_de_linha) !== false){
-        $count =0;
         foreach (explode($quebra_de_linha, $shm_data) as $acesso) {
                 if (strpos($acesso, $separacao_dos_dados) !== false){
                         list($tempo,$dado_checar) = explode($separacao_dos_dados, $acesso);
