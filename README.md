@@ -10,7 +10,7 @@ Default limits hits per second or microsecond per ip to prevent DOS (Denial Of S
 
 # Usage:
 
-Just add anti_DOS.php file in the top of your main php file (like index.php) or resource file being abused and configure parameters $intervalo (check interval), $qtd_max (rate limit) and $tempo_bloqueio (block time) to adjust according to the desired limits.
+Just include or require anti_DOS.php file in the top of your main php file (like index.php) or resource file being abused and configure parameters $intervalo (check interval), $qtd_max (rate limit) and $tempo_bloqueio (block time) to adjust according to the desired limits.
 eg:
 ```php
 <?php
