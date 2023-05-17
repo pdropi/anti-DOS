@@ -1,7 +1,7 @@
 # anti-DOS
 Simple, fast and lightweight PHP script to rate limit accesses. Run in memory (shmop) to improve performance
 
-Deployment with shmop worked faster than with redis and memcached.
+Approach with shmop worked faster than with redis and memcached.
 
 It's multipurpose. It can be used for rate limit based on ip, user agent, among other parameters.
 
